@@ -51,6 +51,11 @@ def register_one_rgbd_pair(
 
     option = o3d.pipelines.odometry.OdometryOption()
     option.max_depth_diff = config["max_depth_diff"]
+
+    # NOTE CH: I am skipping this odometry step altogether, and just using the odomoetry that we get from
+    # ARKit. Using ARKit odometry seemed to give better results than using the computed odometry, but I
+    # suspect that with a bit more work we could do better than ARKit
+
     """
     if abs(s - t) != 1:
         if with_opencv:
@@ -88,7 +93,7 @@ def register_one_rgbd_pair(
         o3d.pipelines.odometry.RGBDOdometryJacobianFromHybridTerm(),
         option,
     )
-    # print("Got final odometry transform ", trans)
+    # Note CH: note I am just returning odo_init in this method below
     return [success, odo_init, info]
 
 
