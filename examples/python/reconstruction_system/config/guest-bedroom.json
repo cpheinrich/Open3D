@@ -1,0 +1,16 @@
+{
+    "name": "Open3D reconstruction tutorial http://open3d.org/docs/release/tutorial/reconstruction_system/system_overview.html",
+    "path_dataset": "dataset/guest-bedroom/",
+    "n_frames_per_fragment": 25,
+    "n_keyframes_per_n_frame": 4,
+    "path_intrinsic": "dataset/iphone_intrinsic.json",
+    "max_depth": 4.5,
+    "voxel_size": 0.04,
+    "max_depth_diff": 0.07,
+    "preference_loop_closure_odometry": 0.1,
+    "preference_loop_closure_registration": 5.0,
+    "tsdf_cubic_size": 5.0,
+    "icp_method": "color",
+    "global_registration": "ransac",
+    "python_multi_threading": true
+}
